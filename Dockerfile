@@ -14,7 +14,14 @@ FROM alpine:${ALPINE}
 RUN apk add --no-cache \
         libc6-compat \
         libstdc++ \
+        nodejs \
         py3-pygments \
-        py3-docutils
+        py3-docutils \
+        yarn \
+ && yarn global add \
+        autoprefixer \
+        postcss \ 
+        postcss-cli        
 COPY --from=fetcher /hugo /usr/bin/hugo
-ENTRYPOINT ["/usr/bin/hugo"]
+COPY ./run-hugo /usr/bin/run-hugo
+ENTRYPOINT ["/usr/bin/run-hugo"]

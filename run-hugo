@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+[ -f package.json ] && [ ! -d node_modules ] && yarn install --frozen-lockfile
+
+/usr/bin/hugo $@
