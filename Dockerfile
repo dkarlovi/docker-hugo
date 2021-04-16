@@ -12,6 +12,7 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${DOCKER_TAG}/hugo_
 
 FROM alpine:${ALPINE}
 RUN apk add --no-cache \
+        asciidoctor \
         libc6-compat \
         libstdc++ \
         nodejs \
