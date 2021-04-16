@@ -12,17 +12,24 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${DOCKER_TAG}/hugo_
 
 FROM alpine:${ALPINE}
 RUN apk add --no-cache \
-        asciidoctor \
+        graphviz \
         libc6-compat \
         libstdc++ \
         nodejs \
+        openjdk8-jre \
         py3-pygments \
         py3-docutils \
+        ruby \
+        ruby-json \
         yarn \
  && yarn global add \
         autoprefixer \
         postcss \ 
-        postcss-cli        
+        postcss-cli \
+  && gem install \
+        asciidoctor \
+        asciidoctor-diagram \
+        asciidoctor-html5s        
 COPY --from=fetcher /hugo /usr/bin/hugo
 COPY ./run-hugo /usr/bin/run-hugo
 ENTRYPOINT ["/usr/bin/run-hugo"]
