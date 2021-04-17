@@ -29,7 +29,8 @@ RUN apk add --no-cache \
   && gem install \
         asciidoctor \
         asciidoctor-diagram \
-        asciidoctor-html5s        
+        asciidoctor-html5s \
+        pygments.rb
 COPY --from=fetcher /hugo /usr/bin/hugo
 COPY bin/ /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/run-hugo"]
