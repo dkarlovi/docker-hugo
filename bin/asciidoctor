@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# remove -a outdir=/target set by Hugo to make the diagrams get built into the content folder (to be able to commit them)
+/usr/bin/asciidoctor $(echo "${@}" | sed "s/-a outdir=[^ ]*//") 

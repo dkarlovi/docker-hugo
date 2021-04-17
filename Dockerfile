@@ -31,5 +31,5 @@ RUN apk add --no-cache \
         asciidoctor-diagram \
         asciidoctor-html5s        
 COPY --from=fetcher /hugo /usr/bin/hugo
-COPY ./run-hugo /usr/bin/run-hugo
-ENTRYPOINT ["/usr/bin/run-hugo"]
+COPY bin/ /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/run-hugo"]
