@@ -3,5 +3,3 @@ description: 'Hugo extended, with Asciidoctor, PlantUML and other support'
 runs:
     using: 'docker'
     image: 'Dockerfile'
-    args:
-        - ${{ inputs.destination }}
