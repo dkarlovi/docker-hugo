@@ -33,4 +33,4 @@ RUN apk add --no-cache \
         pygments.rb
 COPY --from=fetcher /hugo /usr/bin/hugo
 COPY bin/ /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/run-hugo"]
+ENTRYPOINT ["/usr/local/bin/hugo"]

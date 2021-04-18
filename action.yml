@@ -1,0 +1,11 @@
+name: 'Extended Hugo Action'
+description: 'Hugo extended, with Asciidoctor, PlantUML and other support'
+inputs:
+    args:
+        description: 'Hugo args'
+        required: true
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.args }}
