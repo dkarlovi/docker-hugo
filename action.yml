@@ -1,10 +1,5 @@
 name: 'Extended Hugo Action'
 description: 'Hugo extended, with Asciidoctor, PlantUML and other support'
-inputs:
-    destination:
-        description: 'Where to publish to'
-        required: true
-        default: 'public'
 runs:
     using: 'docker'
     image: 'Dockerfile'
