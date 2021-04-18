@@ -1,11 +1,12 @@
 name: 'Extended Hugo Action'
 description: 'Hugo extended, with Asciidoctor, PlantUML and other support'
 inputs:
-    args:
-        description: 'Hugo args'
+    destination:
+        description: 'Where to publish to'
         required: true
+        default: 'public'
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.args }}
+        - ${{ inputs.destination }}

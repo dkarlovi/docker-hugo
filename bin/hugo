@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+set -ex
+
 [ -f package.json ] && [ ! -d node_modules ] && yarn install --frozen-lockfile
+
+test "$GITHUB_ACTIONS" = "true" && (/usr/bin/hugo --destination "$1" --gc --minify --debug --verbose; exit;)
 
 /usr/bin/hugo $@
