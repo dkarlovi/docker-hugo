@@ -4,7 +4,7 @@ RUN apk add  --no-cache \
         ca-certificates \
         coreutils \
         wget
-ARG DOCKER_TAG
+ARG DOCKER_TAG=0.82.0
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${DOCKER_TAG}/hugo_extended_${DOCKER_TAG}_Linux-64bit.tar.gz \
     && wget https://github.com/gohugoio/hugo/releases/download/v${DOCKER_TAG}/hugo_${DOCKER_TAG}_checksums.txt \
     && sha256sum --ignore-missing -c hugo_${DOCKER_TAG}_checksums.txt \
